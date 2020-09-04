@@ -30,14 +30,11 @@ export default {
   name: 'MyNav',
   data() {
     return {
-      activeIndex: '1',
-      activeIndex2: '1'
+      activeIndex: '1'
     }
   },
   methods: {
-    handleSelect(key, keyPath) {
-      console.log(key, keyPath)
-    }
+    handleSelect() {}
   }
 }
 </script>

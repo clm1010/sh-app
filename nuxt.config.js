@@ -25,8 +25,7 @@ module.exports = {
    */
   css: [
     'element-ui/lib/theme-chalk/reset.css',
-    'element-ui/lib/theme-chalk/index.css',
-    '~assets/css/main.css'
+    'element-ui/lib/theme-chalk/index.css'
   ],
   /*
    ** Plugins to load before mounting the App
@@ -47,6 +46,11 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/style-resources'
   ],
+  /*
+   ** Axios module configuration
+   ** See https://axios.nuxtjs.org/options
+   */
+  axios: {},
   /**
    * https://www.npmjs.com/package/@nuxtjs/style-resources
    * 配置stylus、sass、less
@@ -56,33 +60,10 @@ module.exports = {
     // sass: ... 需要什么配置什么，这里是全局的
   },
   /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
-  axios: {},
-  /*
    ** Build configuration
    */
   build: {
     transpile: [/^element-ui/],
-    loaders: [
-      {
-        test: /\.(png|jpe?g|gif|svg)$/,
-        loader: 'url-loader',
-        query: {
-          limit: 10000,
-          name: 'img/[name].[hash].[ext]'
-        }
-      },
-      {
-        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10000,
-          name: 'fonts/[name].[hash:7].[ext]'
-        }
-      }
-    ],
     /*
      ** You can extend webpack config here
      */

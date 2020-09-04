@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import MyNav from './nav.vue'
+import MyNav from './nav'
 export default {
   name: 'MyHeader',
   components: {

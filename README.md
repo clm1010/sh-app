@@ -1,6 +1,6 @@
 # sh-app
 
-> My splendiferous Nuxt.js project
+> My legendary Nuxt.js project
 
 ## Build Setup
 

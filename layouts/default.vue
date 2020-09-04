@@ -1,23 +1,20 @@
 <template>
-  <el-container>
-    <el-header>
-      <my-header></my-header>
-    </el-header>
-    <el-main>
-      <nuxt />
-    </el-main>
-    <el-footer>Footer</el-footer>
-  </el-container>
+  <div>
+    <my-header></my-header>
+    <nuxt />
+  </div>
 </template>
 <script>
-import MyHeader from '@/components/public/header/index.vue'
+import MyHeader from '@/components/header/index.vue'
 export default {
+  name: 'Default',
   components: {
     MyHeader
   },
   data() {
     return {}
-  }
+  },
+  methods: {}
 }
 </script>
-<style lang="stylus" scoped></style>
+<style></style>
