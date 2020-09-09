@@ -1,12 +1,15 @@
 <template>
-  <div>
-    main
-  </div>
+  <el-footer>
+    footer
+  </el-footer>
 </template>
 
 <script>
 export default {
-  components: {}
+  name: 'MyFooter',
+  data() {
+    return {}
+  }
 }
 </script>
 

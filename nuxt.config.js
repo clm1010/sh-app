@@ -25,7 +25,8 @@ module.exports = {
    */
   css: [
     'element-ui/lib/theme-chalk/reset.css',
-    'element-ui/lib/theme-chalk/index.css'
+    'element-ui/lib/theme-chalk/index.css',
+    '@/assets/css/common.styl'
   ],
   /*
    ** Plugins to load before mounting the App
@@ -56,7 +57,8 @@ module.exports = {
    * 配置stylus、sass、less
    */
   styleResources: {
-    stylus: ['~/assets/stylus/common.styl']
+    // stylus: ['~assets/common.styl']
+    stylus: ['~assets/css/stylus/_colors.styl']
     // sass: ... 需要什么配置什么，这里是全局的
   },
   /*
@@ -78,6 +80,6 @@ module.exports = {
         })
       }
     },
-    cache: true
+    cache: false
   }
 }

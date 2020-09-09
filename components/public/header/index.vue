@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="sh-container">
     <my-nav></my-nav>
   </div>
 </template>
 
 <script>
-import MyNav from './nav'
+import MyNav from './nav.vue'
 export default {
   name: 'MyHeader',
   components: {
@@ -17,4 +17,4 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped></style>
+<style lang="scss"></style>
