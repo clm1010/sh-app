@@ -1,5 +1,5 @@
 <template>
-  <div class="sh-container">
+  <div>
     <my-nav></my-nav>
   </div>
 </template>
@@ -17,4 +17,4 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="stylus" scoped></style>

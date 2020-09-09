@@ -58,7 +58,7 @@ module.exports = {
    */
   styleResources: {
     // stylus: ['~assets/common.styl']
-    stylus: ['~assets/css/stylus/_colors.styl']
+    stylus: ['~assets/css/public/_colors.styl']
     // sass: ... 需要什么配置什么，这里是全局的
   },
   /*
