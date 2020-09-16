@@ -1,7 +1,20 @@
 <template>
-  <el-carousel :height="sliderHeight + 'px'">
+  <el-carousel :height="bannerHeight + 'px'">
     <el-carousel-item v-for="(item, index) in sliderList" :key="index">
-      <img :src="item.src" alt="" />
+      <img
+        ref="bannerHeight"
+        :src="item.src"
+        alt=""
+        width="100%"
+        @load="imgLoad"
+      />
+      <!-- <el-image
+        ref="bannerHeight"
+        :src="item.src"
+        alt=""
+        width="100%"
+        @load="imgLoad"
+      ></el-image> -->
     </el-carousel-item>
   </el-carousel>
 </template>
@@ -9,16 +22,9 @@
 <script>
 export default {
   name: 'MySlider',
-  props: {
-    sliderHeight: {
-      type: Number,
-      default: () => {
-        return 600
-      }
-    }
-  },
   data() {
     return {
+      bannerHeight: '',
       sliderList: [
         {
           url: '#abc',
@@ -41,6 +47,24 @@ export default {
           src: '/img/slider-05.jpg'
         }
       ]
+    }
+  },
+  mounted() {
+    this.imgLoad()
+    window.addEventListener(
+      'resize',
+      () => {
+        this.bannerHeight = this.$refs.bannerHeight[0].height
+        this.imgLoad()
+      },
+      false
+    )
+  },
+  methods: {
+    imgLoad() {
+      this.$nextTick(() => {
+        this.bannerHeight = this.$refs.bannerHeight[0].height
+      })
     }
   }
 }

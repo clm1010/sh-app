@@ -1,72 +1,27 @@
 <template>
-  <el-row type="flex" justify="center" :gutter="16">
-    <el-col>
-      <el-card shadow="hover" :body-style="{ padding: '0px' }">
-        <el-image src="/img/field-01.jpg">
-          <div
-            slot="error"
-            class="image-slot"
-            @mouseover.native="handlMouseOver"
-            @mouseleave.native="handlMouseLeave"
-          >
-            <i class="el-icon-picture-outline"></i>
-          </div>
-        </el-image>
-        <div :style="active" class="text-desc">
-          仓储物流
-        </div>
-      </el-card>
-    </el-col>
-    <el-col>
+  <el-row :gutter="10">
+    <el-col
+      v-for="(item, index) in fieldImgData"
+      :key="index"
+      :xs="8"
+      :sm="8"
+      :md="8"
+      :lg="1"
+      :xl="1"
+    >
       <el-card
         shadow="hover"
         :body-style="{ padding: '0px' }"
-        @mouseover.native.prevent="handlMouseOver"
-        @mouseleave.native.prevent="handlMouseLeave"
+        @mouseenter.native="handlMouseOver(index)"
+        @mouseleave.native="handlMouseLeave(index)"
       >
-        <el-image src="/img/field-02.jpg">
+        <el-image :src="item.src">
           <div slot="error" class="image-slot">
             <i class="el-icon-picture-outline"></i>
           </div>
         </el-image>
-        <div class="text-desc">
-          11111
-        </div>
-      </el-card>
-    </el-col>
-    <el-col>
-      <el-card shadow="hover" :body-style="{ padding: '0px' }">
-        <el-image src="/img/field-03.jpg">
-          <div slot="error" class="image-slot">
-            <i class="el-icon-picture-outline"></i>
-          </div>
-        </el-image>
-        <div class="text-desc">
-          11111
-        </div>
-      </el-card>
-    </el-col>
-    <el-col>
-      <el-card shadow="hover" :body-style="{ padding: '0px' }">
-        <el-image src="/img/field-04.jpg">
-          <div slot="error" class="image-slot">
-            <i class="el-icon-picture-outline"></i>
-          </div>
-        </el-image>
-        <div class="text-desc">
-          11111
-        </div>
-      </el-card>
-    </el-col>
-    <el-col>
-      <el-card shadow="hover" :body-style="{ padding: '0px' }">
-        <el-image src="/img/-05.jpg">
-          <div slot="error" class="image-slot">
-            <i class="el-icon-picture-outline"></i>
-          </div>
-        </el-image>
-        <div class="text-desc">
-          11111
+        <div :class="index == current ? 'active' : ''" class="text-desc">
+          {{ item.text }}
         </div>
       </el-card>
     </el-col>
@@ -79,15 +34,43 @@ export default {
   components: {},
   data() {
     return {
+      current: -1,
+      fieldImgData: [
+        {
+          id: 1,
+          src: '/img/field-01.jpg',
+          text: '仓储物流'
+        },
+        {
+          id: 2,
+          src: '/img/field-02.jpg',
+          text: '仓储物流'
+        },
+        {
+          id: 3,
+          src: '/img/field-03.jpg',
+          text: '仓储物流'
+        },
+        {
+          id: 4,
+          src: '/img/field-04.jpg',
+          text: '仓储物流'
+        },
+        {
+          id: 5,
+          src: '/img/field-05.jpg',
+          text: '仓储物流'
+        }
+      ],
       active: ''
     }
   },
   methods: {
-    handlMouseOver() {
-      this.active = 'background-color:#409EFF;'
+    handlMouseOver(index) {
+      this.current = index
     },
-    handlMouseLeave() {
-      this.active = ''
+    handlMouseLeave(index) {
+      this.current = -1
     }
   }
 }
@@ -97,6 +80,7 @@ export default {
 .el-row
   border 1px solid red
   .el-card
+    cursor pointer
     >>>
       .el-image
         width 100%
@@ -108,7 +92,11 @@ export default {
             font-size 100px
       .text-desc
         font-size 18px
-        font-weight 600
+        font-weight 500
         text-align center
-        border 1px solid red
+        min-height 60px
+        line-height 60px
+    .active
+      color #ffffff
+      background-color $color-Brand
 </style>
