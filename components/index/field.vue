@@ -1,13 +1,11 @@
 <template>
-  <el-row :gutter="10">
+  <el-row :gutter="20">
     <el-col
       v-for="(item, index) in fieldImgData"
       :key="index"
-      :xs="8"
-      :sm="8"
-      :md="8"
-      :lg="1"
-      :xl="1"
+      :xs="12"
+      :sm="12"
+      :md="12"
     >
       <el-card
         shadow="hover"
@@ -78,13 +76,13 @@ export default {
 
 <style lang="stylus" scoped>
 .el-row
-  border 1px solid red
+  margin-left 0 !important
+  margin-right 0 !important
   .el-card
     cursor pointer
     >>>
       .el-image
         width 100%
-        min-height 202px
         text-align center
         color $color-PlaceholderText
         .image-slot

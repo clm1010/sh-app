@@ -1,6 +1,6 @@
 <template>
   <div class="page-index">
-    <field />
+    <field class="field" />
   </div>
 </template>
 
@@ -14,7 +14,4 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.page-index
-  border 1px solid red
-</style>
+<style lang="stylus" scoped></style>

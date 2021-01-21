@@ -12,6 +12,7 @@
     <el-footer>
       <my-footer></my-footer>
     </el-footer>
+    <el-backtop :right="10"></el-backtop>
   </el-container>
 </template>
 <script>

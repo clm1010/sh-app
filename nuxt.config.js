@@ -27,6 +27,7 @@ module.exports = {
     'element-ui/lib/theme-chalk/reset.css',
     'element-ui/lib/theme-chalk/index.css',
     'element-ui/lib/theme-chalk/display.css',
+    '@/assets/css/media-layout.styl',
     '@/assets/css/common.styl'
   ],
   /*
